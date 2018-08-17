@@ -5,6 +5,10 @@ var  app = express();
 
 
 
+
+var port = process.env.PORT ||3000 ;
+
+
 hbs.registerPartials(__dirname +'/views/partials');
 
 app.set('view engine', hbs);
@@ -61,6 +65,6 @@ app.get('/bad' , (req , res)=>{
     })
 })
 
-app.listen(3000 ,()=>{
-    console.log('server is on port 3000 ');
+app.listen(port ,()=>{
+    console.log(`server port is ${port}`);
 });
